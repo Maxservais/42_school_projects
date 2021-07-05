@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:30:53 by mservais          #+#    #+#             */
-/*   Updated: 2021/06/02 15:47:31 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/05 11:43:12 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_sizeofint(int n)
+static int	ft_sizeofint(int n)
 {
 	int	i;
 

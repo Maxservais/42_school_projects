@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 09:16:27 by mservais          #+#    #+#             */
-/*   Updated: 2021/06/01 19:20:47 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/05 13:59:21 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	ptr_src = (unsigned char *)src;
 	ptr_dest = (unsigned char *)dest;
+	if (ptr_src == ptr_dest)
+		return (NULL);
 	if (ptr_dest > ptr_src)
 	{
 		while (n-- > 0)
-		{
 			ptr_dest[n] = ptr_src[n];
-		}
 	}
 	else
 	{

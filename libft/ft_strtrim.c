@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 12:32:28 by mservais          #+#    #+#             */
-/*   Updated: 2021/06/01 18:48:45 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/05 11:43:11 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_belongs(char const *set, char c)
+static int	ft_belongs(char const *set, char c)
 {
 	int		i;
 
