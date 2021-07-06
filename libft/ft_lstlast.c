@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 11:08:54 by mservais          #+#    #+#             */
-/*   Updated: 2021/06/04 12:06:50 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/06 11:09:40 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)
-		return (lst);
+	if (!lst)
+		return (NULL);
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);

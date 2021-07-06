@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 11:16:23 by mservais          #+#    #+#             */
-/*   Updated: 2021/06/02 16:00:42 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/06 10:25:42 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*sub_str;
 
+	if (!s)
+		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
 	if (start + len > ft_strlen(s))

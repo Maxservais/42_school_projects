@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:57:20 by mservais          #+#    #+#             */
-/*   Updated: 2021/06/02 13:33:59 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/06 10:41:13 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	if (s)
+		write(fd, s, ft_strlen(s));
 }
