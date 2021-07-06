@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 16:57:28 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/06 14:23:57 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:03:23 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ static int	ft_substrlen(char const *s, char c)
 
 	i = 0;
 	while (*(s + i) != '\0' && *(s + i) != c)
-	{
 		i++;
-	}
 	return (i);
 }
 
