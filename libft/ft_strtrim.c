@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 12:32:28 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/05 11:43:11 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/06 14:07:16 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = ft_strlen(s1) - 1;
 	while (*(s1 + i) != '\0' && ft_belongs(set, *(s1 + i)))
-	{
 		i++;
-	}
 	while ((j > i) && ft_belongs(set, *(s1 + j)))
-	{
 		j--;
-	}
 	return (ft_substr(s1, i, j - i + 1));
 }
