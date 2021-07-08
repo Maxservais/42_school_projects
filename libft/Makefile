@@ -6,7 +6,7 @@
 #    By: mservais <mservais@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/12 17:29:50 by mservais          #+#    #+#              #
-#    Updated: 2021/06/04 14:50:44 by mservais         ###   ########.fr        #
+#    Updated: 2021/07/08 14:27:23 by mservais         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRC_FILES		= ft_atoi.c \
 				ft_isascii.c \
 				ft_isdigit.c \
 				ft_isprint.c \
-				ft_memccpy.c \
 				ft_memchr.c \
 				ft_memcmp.c \
 				ft_memcpy.c \
@@ -40,6 +39,7 @@ SRC_FILES		= ft_atoi.c \
 				ft_split.c \
 				ft_itoa.c \
 				ft_strmapi.c \
+				ft_striteri.c \
 				ft_putchar_fd.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
