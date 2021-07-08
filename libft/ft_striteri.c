@@ -6,11 +6,9 @@
 /*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:35:37 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/08 14:31:08 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/08 16:49:15 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
