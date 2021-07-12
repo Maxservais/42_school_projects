@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 09:32:30 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/12 13:53:14 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/12 17:24:08 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_end_of_line(char const *str)
 
 size_t	ft_find_newline(char const *str)
 {
-	int	i;
+	size_t	i;
 
 	if (!str)
 		return (0);
@@ -72,6 +72,7 @@ char	*ft_return(char **line_in_memory, char **buffer)
 	if (!line || *line == '\0')
 		return (NULL);
 	*line_in_memory = ft_strdup_new_line(*line_in_memory);
+	system("leaks a.out");
 	if (!*line_in_memory)
 		return (NULL);
 	if (line)

@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 09:32:30 by mservais          #+#    #+#             */
-/*   Updated: 2021/06/16 15:48:31 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/12 18:04:37 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char	*ft_error_check(int fd, char **line)
+char	*ft_error_check(int fd)
 {
 	char	*buffer;
 
-	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE < 1 || !line)
+	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE < 1)
 		return (NULL);
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
@@ -40,9 +40,9 @@ int	ft_end_of_line(char const *str)
 	return (0);
 }
 
-int	ft_find_newline(char const *str)
+size_t	ft_find_newline(char const *str)
 {
-	int	i;
+	size_t	i;
 
 	if (!str)
 		return (0);
@@ -56,32 +56,38 @@ int	ft_find_newline(char const *str)
 	return (0);
 }
 
-int	ft_return(char **line, char **line_in_memory, char **buffer, int byte_read)
+char	*ft_return(char **line_in_memory, char **buffer)
 {
-	free(*buffer);
+	size_t	pos_newline;
+	char	*line;
+
+	free((void *)*buffer);
 	if (ft_end_of_line(*line_in_memory))
-		*line = ft_substr(*line_in_memory, 0, ft_find_newline(*line_in_memory));
+	{
+		pos_newline = ft_find_newline(*line_in_memory) + 1;
+		line = ft_substr(*line_in_memory, 0, pos_newline);
+	}
 	else
-		*line = ft_substr(*line_in_memory, 0, ft_strlen(*line_in_memory));
-	if (!*line)
-		return (-1);
+		line = ft_substr(*line_in_memory, 0, ft_strlen(*line_in_memory));
+	if (!line || *line == '\0')
+		return (NULL);
 	*line_in_memory = ft_strdup_new_line(*line_in_memory);
-	if (!*line_in_memory && byte_read != 0)
-		return (-1);
-	if (byte_read)
-		return (1);
-	return (0);
+	if (!*line_in_memory)
+		return (NULL);
+	if (line)
+		return (line);
+	return (NULL);
 }
 
-int	get_next_line(int fd, char **line)
+char	*get_next_line(int fd)
 {
 	int			byte_read;
 	char		*buffer;
 	static char	*line_in_memory[FOPEN_MAX];
 
-	buffer = ft_error_check(fd, line);
+	buffer = ft_error_check(fd);
 	if (!buffer)
-		return (-1);
+		return (NULL);
 	byte_read = 1;
 	while (byte_read && !ft_end_of_line(line_in_memory[fd]))
 	{
@@ -89,15 +95,16 @@ int	get_next_line(int fd, char **line)
 		if (byte_read < 0)
 		{
 			free((void *)buffer);
-			return (-1);
+			return (NULL);
 		}
 		buffer[byte_read] = '\0';
 		line_in_memory[fd] = ft_strjoin(line_in_memory[fd], buffer);
 		if (!line_in_memory[fd])
 		{
 			free((void *)buffer);
-			return (-1);
+			return (NULL);
 		}
 	}
-	return (ft_return(line, &line_in_memory[fd], &buffer, byte_read));
+	system("leaks a.out");
+	return (ft_return(&line_in_memory[fd], &buffer));
 }

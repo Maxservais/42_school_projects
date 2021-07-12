@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 16:37:23 by mservais          #+#    #+#             */
-/*   Updated: 2021/06/16 11:04:23 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/12 17:17:37 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strdup(char *s)
 	int		len;
 	int		i;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
@@ -88,11 +88,12 @@ char	*ft_strdup_new_line(char const *s)
 		}
 		i++;
 	}
+	dst = ft_strdup((char *) s + i);
 	free((void *)s);
-	return (NULL);
+	return (dst);
 }
 
-char	*ft_substr(char *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*sub_str;
