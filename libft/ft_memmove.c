@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 09:16:27 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/06 13:48:16 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/12 09:52:35 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	ptr_src = (unsigned char *)src;
 	ptr_dest = (unsigned char *)dest;
 	if (ptr_src == ptr_dest)
-		return (NULL);
+		return (dest);
 	if (ptr_dest > ptr_src)
 	{
 		while (n-- > 0)
