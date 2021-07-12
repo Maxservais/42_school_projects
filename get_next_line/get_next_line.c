@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 09:32:30 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/09 16:37:37 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/12 10:28:52 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_find_newline(char const *str)
 	return (0);
 }
 
-char	*ft_return(char **line_in_memory, char **buffer, int byte_read)
+char	*ft_return(char **line_in_memory, char **buffer)
 {
 	char	*line;
 
@@ -68,7 +68,7 @@ char	*ft_return(char **line_in_memory, char **buffer, int byte_read)
 	if (!line || *line == '\0')
 		return (NULL);
 	*line_in_memory = ft_strdup_new_line(*line_in_memory);
-	if (!*line_in_memory && byte_read != 0)
+	if (!*line_in_memory)
 		return (NULL);
 	if (line)
 		return (line);
@@ -101,7 +101,7 @@ char	*get_next_line(int fd)
 			return (NULL);
 		}
 	}
-	return (ft_return(&line_in_memory, &buffer, byte_read));
+	return (ft_return(&line_in_memory, &buffer));
 }
 
 #include <stdio.h>
