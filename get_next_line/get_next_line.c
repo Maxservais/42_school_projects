@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 09:32:30 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/13 14:18:04 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/13 14:39:27 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ char	*ft_return(char **line_in_memory, char **buffer)
 		free(line);
 		return (NULL);
 	}
-		
 	*line_in_memory = ft_strdup_new_line(*line_in_memory);
 	if (!*line_in_memory)
 		return (NULL);
