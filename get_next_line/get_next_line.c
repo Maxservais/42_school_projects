@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 09:32:30 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/12 17:24:08 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/13 13:32:35 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,12 @@ char	*ft_return(char **line_in_memory, char **buffer)
 	else
 		line = ft_substr(*line_in_memory, 0, ft_strlen(*line_in_memory));
 	if (!line || *line == '\0')
+	{
+		free(line);
 		return (NULL);
+	}
+		
 	*line_in_memory = ft_strdup_new_line(*line_in_memory);
-	system("leaks a.out");
 	if (!*line_in_memory)
 		return (NULL);
 	if (line)
