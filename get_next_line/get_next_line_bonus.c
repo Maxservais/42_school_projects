@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 09:32:30 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/13 13:40:23 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/13 13:46:06 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,5 @@ char	*get_next_line(int fd)
 			return (NULL);
 		}
 	}
-	system("leaks a.out");
 	return (ft_return(&line_in_memory[fd], &buffer));
 }

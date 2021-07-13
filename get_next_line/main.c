@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 13:43:17 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/13 13:42:34 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/13 14:25:10 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ int	main(void)
 		free(line);
 		i++;
 	}
+	close(fd1);
+	close(fd2);
+	close(fd3);
 	return (0);
 }
