@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/09 16:37:23 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/12 17:17:37 by mservais         ###   ########.fr       */
+/*   Created: 2021/07/15 12:00:36 by mservais          #+#    #+#             */
+/*   Updated: 2021/07/15 12:00:38 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	str = malloc(sizeof(char const) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s1 || !s2)
+	{
+		if (s1)
+			return (ft_strdup(s1));
+		else if (s2)
+			return (ft_strdup(s2));
+		return (NULL);
+	}
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -48,7 +56,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-char	*ft_strdup(char *s)
+char	*ft_strdup(char const *s)
 {
 	char	*dst;
 	int		len;

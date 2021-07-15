@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 16:01:50 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/12 18:30:07 by mservais         ###   ########.fr       */
+/*   Created: 2021/07/15 11:59:40 by mservais          #+#    #+#             */
+/*   Updated: 2021/07/15 11:59:45 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 size_t	ft_strlen(char const *s);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(char *s);
+char	*ft_strdup(char const *s);
 char	*ft_strdup_new_line(char const *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_error_check(int fd);
