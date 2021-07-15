@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 12:00:25 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/15 12:05:35 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/15 16:19:02 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	if (s1 && !s2)
-		return (ft_strdup(s1));
-	else if (s2 && !s1)
-		return (ft_strdup(s2));
-	else if (!s1 && !s2)
+	if (!s1 || !s2)
+	{
+		if (s1)
+		{
+			str = ft_strdup(s1); 
+			free((void *)s1);
+			return (str);
+		}
+		else if (s2)
+			return (ft_strdup(s2));
 		return (NULL);
+	}
+	// if (s1 && !s2)
+	// 	return (ft_strdup(s1));
+	// else if (s2 && !s1)
+	// 	return (ft_strdup(s2));
+	// else if (!s1 && !s2)
+	// 	return (NULL);
 	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (NULL);

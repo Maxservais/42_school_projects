@@ -23,14 +23,14 @@ int	main(void)
 	// int		fd2;
 	// int		fd3;
 
-	fd1 = open("test.txt", O_RDONLY);
+	fd1 = open("test2.txt", O_RDONLY);
 	// fd2 = open("test2.txt", O_RDONLY);
 	// fd3 = open("test3.txt", O_RDONLY);
 	i = 1;
 	while (i < 7)
 	{
 		line = get_next_line(fd1);
-		printf("line [%02d]: %s", i, line);
+		printf("line [%02d]: %s\n", i, line);
 		free(line);
 		// line = get_next_line(fd2);
 		// printf("line [%02d]: %s", i, line);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 12:00:36 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/15 12:00:38 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/15 18:24:51 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	int		i;
 	int		j;
+	int		len;
 
 	if (!s1 || !s2)
 	{
@@ -36,7 +37,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			return (ft_strdup(s2));
 		return (NULL);
 	}
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	len = ft_strlen(s1) + ft_find_newline(s2);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -46,7 +48,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	j = 0;
-	while (s2 && *(s2 + j) != '\0')
+	while (s2 && *(s2 + j) != '\0' && *(s2 + j) != '\n')
 	{
 		*(str + i + j) = *(s2 + j);
 		j++;
