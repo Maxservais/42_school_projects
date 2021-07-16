@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 12:00:36 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/16 16:03:24 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/16 18:51:37 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		if (*(s2 + j) == '\n')
 		{
 			j++;
-			break;
+			break ;
 		}
 		j++;
 	}
