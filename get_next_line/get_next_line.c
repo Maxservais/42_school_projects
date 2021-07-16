@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 12:00:46 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/16 16:03:15 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/16 17:04:42 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	buffer[BUFFER_SIZE + 1];
 
- 	if (fd < 0 || BUFFER_SIZE < 1)
+ 	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = ft_strjoin(NULL, buffer);
 	if (!line)
@@ -110,7 +110,10 @@ char	*get_next_line(int fd)
 	{
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		if (byte_read < 0)
+		{
+			free(line);
 			return (NULL);
+		}
 		buffer[byte_read] = '\0';
 		line = ft_strjoin(line, buffer);
 		if (!line)

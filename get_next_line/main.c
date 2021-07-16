@@ -23,7 +23,7 @@ int	main(void)
 	// int		fd2;
 	// int		fd3;
 
-	fd1 = open("test.txt", O_RDONLY);
+	fd1 = open("test3.txt", O_RDONLY);
 	// fd2 = open("test2.txt", O_RDONLY);
 	// fd3 = open("test3.txt", O_RDONLY);
 	i = 1;
@@ -45,3 +45,36 @@ int	main(void)
 	// close(fd3);
 	return (0);
 }
+
+
+// #include <fcntl.h>
+// #include <stdio.h>
+// #include "get_next_line.h"
+
+// int main(int ac, char **av)
+// {
+//     int        fd;
+//     char    *line;
+//     int        ct;
+//     int        i = 0;
+
+//     ct = 100;
+//     if (ac == 0)
+//         return (0);
+//     fd = open(av[1], O_WRONLY);
+//     while (ct > 0)
+//     {
+//         line = get_next_line(fd);
+//         printf("line %02i : |%s|\n%p\n", i, line, line);
+//         if (line)
+//         {
+//             free(line);
+//             line = NULL;
+//         }
+//         else
+//             break;
+//         i++;
+//         ct--;
+//     }
+//     return (1);
+// }

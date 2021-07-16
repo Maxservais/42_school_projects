@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 11:59:23 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/16 13:13:39 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:20:02 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 # ifndef	BUFFER_SIZE
 #  define BUFFER_SIZE 40
