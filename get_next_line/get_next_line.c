@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 12:00:46 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/15 19:40:43 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/16 13:11:37 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	ft_cut(char str[], size_t n)
 	}
 	while (i < BUFFER_SIZE)
 	{
-		str[i] = '\0';
+		str[i] = 0;
 		i++;
 	}
 }
@@ -97,10 +97,13 @@ char	*get_next_line(int fd)
  	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	line = ft_strjoin(NULL, buffer);
+	if (!line)
+		return (NULL);
 	if (ft_find_newline(buffer) != ft_strlen(buffer))
 	{
 		ft_cut(buffer, ft_find_newline(buffer) + 1);
-		return (line);
+		if (ft_end_of_line(line))
+			return (line);
 	}
 	byte_read = 1;
 	while (byte_read && !ft_end_of_line(buffer))
@@ -118,13 +121,15 @@ char	*get_next_line(int fd)
 		byte_read = 0;
 		while (byte_read < BUFFER_SIZE)
 		{
-			buffer[byte_read] = '\0';
+			buffer[byte_read] = 0;
 			byte_read++;
 		}
-		return (line);
+		if (ft_end_of_line(line))
+			return (line);
 	}
 	ft_cut(buffer, ft_find_newline(buffer) + 1);
-	if (line)
+	if (ft_end_of_line(line))
 		return (line);
+	free(line);
 	return (NULL);
 }
