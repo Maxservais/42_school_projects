@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 12:00:46 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/16 13:11:37 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/16 16:03:15 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,8 @@ char	*get_next_line(int fd)
 		if (ft_end_of_line(line))
 			return (line);
 	}
-	byte_read = 1;
-	while (byte_read && !ft_end_of_line(buffer))
+	byte_read = BUFFER_SIZE;
+	while (byte_read == BUFFER_SIZE && !ft_end_of_line(buffer))
 	{
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		if (byte_read < 0)
@@ -115,6 +115,8 @@ char	*get_next_line(int fd)
 		line = ft_strjoin(line, buffer);
 		if (!line)
 			return (NULL);
+		if (byte_read == BUFFER_SIZE)
+			byte_read = ft_find_newline(buffer);
 	}
 	if (ft_find_newline(buffer) == ft_strlen(buffer))
 	{
@@ -128,7 +130,7 @@ char	*get_next_line(int fd)
 			return (line);
 	}
 	ft_cut(buffer, ft_find_newline(buffer) + 1);
-	if (ft_end_of_line(line))
+	if (ft_end_of_line(line) || ft_strlen(line))
 		return (line);
 	free(line);
 	return (NULL);
