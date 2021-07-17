@@ -6,7 +6,7 @@
 /*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 12:00:46 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/17 11:31:10 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/17 14:42:48 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,24 @@ char	*ft_return_null(char **line)
 {
 	free(*line);
 	return (NULL);
+}
+
+void	ft_cut(char str[], size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (n < BUFFER_SIZE)
+	{
+		str[i] = str[n];
+		n++;
+		i++;
+	}
+	while (i < BUFFER_SIZE)
+	{
+		str[i] = 0;
+		i++;
+	}
 }
 
 char	*ft_return(char buffer[], char **line, int byte_read)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 11:59:40 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/15 11:59:45 by mservais         ###   ########.fr       */
+/*   Updated: 2021/07/17 14:43:53 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,13 @@
 # endif
 
 size_t	ft_strlen(char const *s);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(char const *s);
-char	*ft_strdup_new_line(char const *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_error_check(int fd);
-int		ft_end_of_line(char const *str);
+int		ft_end_of_line(char *str);
 size_t	ft_find_newline(char const *str);
-char	*ft_return(char **line_in_memory, char **buffer);
+char	*ft_return_null(char **line);
+void	ft_cut(char str[], size_t n);
+char	*ft_return(char buffer[], char **line, int byte_read);
 char	*get_next_line(int fd);
 
 #endif
