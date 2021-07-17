@@ -23,7 +23,7 @@ int	main(void)
 	// int		fd2;
 	// int		fd3;
 
-	fd1 = open("test3.txt", O_RDONLY);
+	fd1 = open("test.txt", O_RDONLY);
 	// fd2 = open("test2.txt", O_RDONLY);
 	// fd3 = open("test3.txt", O_RDONLY);
 	i = 1;
