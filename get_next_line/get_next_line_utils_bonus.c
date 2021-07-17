@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mservais <mservais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mservais <mservais@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 12:00:25 by mservais          #+#    #+#             */
-/*   Updated: 2021/07/17 14:44:28 by mservais         ###   ########.fr       */
+/*   Created: 2021/07/17 15:21:45 by mservais          #+#    #+#             */
+/*   Updated: 2021/07/17 15:21:48 by mservais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
