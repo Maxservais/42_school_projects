@@ -1,4 +1,4 @@
-# 19_submission
+# Projects part of 42's cursus
 
 Some of the projects I worked on while studying at 19 (Part of 42's network):
 
