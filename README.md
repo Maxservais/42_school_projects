@@ -1,6 +1,6 @@
 # Projects part of 42's cursus
 
-Some of the projects I worked on while studying at 19 (Part of 42's network):
+Some of the projects I worked on while studying at 42 (Brussels' campus):
 
 **1. Libft**: This project aims to code a C library regrouping usual functions that we will be allowed to use in all our other projects.
 
