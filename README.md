@@ -21,3 +21,11 @@ Some of the projects I worked on while studying at 19 (Part of 42's network):
 **9. Philosophers**: This project teaches the basics of threading a process and using mutexes through the famous Dining Philosopher Problem.
 
 **10. Net_Practice**: Goal of the project is to solve networking problems to make a network run.
+
+**11. Cub3d**: This project is inspired by the world-famous eponymous 90's game (Wolfenstein 3D), the first FPS ever.
+
+**12. CPP_Modules**: Goal of the project is to discover the basics of an object-oriented programming language (C++) through a series of exercises.
+
+**13. Containers**: Purpose of the project is to implement a few container types of the C++ standard template library (vector, stack & map) and program our own red–black tree (a kind of self-balancing binary search tree).
+
+**14. Webserv**: A simple HTTP webserver (similar to Nginx).
