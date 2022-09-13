@@ -1,0 +1,66 @@
+version: "3.9"
+
+services:
+  nginx:
+    build:
+      context: ./requirements/nginx
+    depends_on:
+      - wordpress
+    ports:
+      - "443:443"
+    networks:
+      - mynetwork
+    restart: always
+    volumes:
+      - "website:/var/www"
+    container_name: nginx
+
+  wordpress:
+    build:
+      context: ./requirements/wordpress
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    networks:
+      - mynetwork
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - "website:/var/www"
+    container_name: wordpress
+
+  mariadb:
+    build:
+      context: ./requirements/mariadb
+    networks:
+      - mynetwork
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - "database:/var/lib/mysql"
+    container_name: mariadb
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-u", "$MYSQL_USER", "-p$MYSQL_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+
+networks:
+  mynetwork:
+
+volumes:
+  website:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/mservais/data/website
+
+  database:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/mservais/data/database
