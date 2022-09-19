@@ -1,3 +1,31 @@
+# What is school 42?
+
+42 is a future-proof computer science training that educates the next generation of software engineers. The program takes a project-based approach to progress and is designed to develop technical and people skills that match the expectations of the labor market (+12 000 students globally).
+
+The curriculum at 42 starts with the core curriculum. This experience sets the base for minimum skills, both human and technical. Following each student’s personal pace, it lasts a maximum of 18 months and lets students learn C programming, develop simple software using classic algorithms, discover access to the file system, and learn management of the UNIX process. It also includes a simple first approach to network architecture as well as system administration. The program also offers oriented programming and a client-server project.
+
+More info: https://42.fr/en/homepage/
+
+# Topics introduced at 42:
+
+- Programming:
+	- C
+	- C++ (OOP)
+	- Typescript
+
+- Data Structures & Algorithms
+
+- Version control
+
+- Unix Systems
+
+- System Administration (Virtualization, Containerization)
+
+- Networking
+
+- Web Dev:
+	- ReactJS
+	- NodeJS / NestJS
 # Projects part of 42's cursus
 
 Some of the projects I worked on while studying at 42 (Brussels' campus):
