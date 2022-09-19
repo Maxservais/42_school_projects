@@ -1,0 +1,1 @@
+Purpose of the project is to implement a few container types of the C++ standard template library (vector, stack & map) and program our own red–black tree (a kind of self-balancing binary search tree).
